@@ -107,3 +107,37 @@ footer {
     color: #888;
     text-transform: lowercase;
 }
+
+
+.contact-footer {
+    margin-top: 180px;      /* Keeps that deep "lowered" look you liked */
+    padding-top: 0;         /* You can set this to 0 now that the line is gone */
+    border-top: none;       /* This removes the line! */
+    margin-bottom: 60px;    /* Extra space so it's not hugging the very bottom of the screen */
+}
+
+.footer-links {
+    margin-bottom: 8px;
+    display: flex;         /* Helps with spacing things in a row */
+    gap: 25px;            /* Clean, consistent space between links */
+}
+
+.footer-links a {
+    color: #000;
+    text-decoration: none;
+    text-transform: lowercase; /* Matches your nav bar perfectly */
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+}
+
+.footer-links a:hover {
+    opacity: 0.5;
+}
+
+.contact-footer p {
+    font-size: 0.7rem;
+    color: #000;
+    margin-top: 10px;
+    opacity: 0.6;
+}
