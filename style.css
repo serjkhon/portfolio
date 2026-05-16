@@ -89,9 +89,9 @@ p {
 .project-link {
     color: #000;
     text-decoration: underline;
-    text-underline-offset: 4px; /* A little extra space looks really clean */
+    text-underline-offset: 4px; 
     font-weight: 600;
-    transition: opacity 0.2s ease; /* Matches your nav transition exactly */
+    transition: opacity 0.2s ease; 
 }
 
 /* Grouping the hovers so they are identical */
@@ -110,22 +110,22 @@ footer {
 
 
 .contact-footer {
-    margin-top: 180px;      /* Keeps that deep "lowered" look you liked */
-    padding-top: 0;         /* You can set this to 0 now that the line is gone */
-    border-top: none;       /* This removes the line! */
-    margin-bottom: 60px;    /* Extra space so it's not hugging the very bottom of the screen */
+    margin-top: 180px;
+    padding-top: 0;      
+    border-top: none;      
+    margin-bottom: 60px;   
 }
 
 .footer-links {
     margin-bottom: 8px;
-    display: flex;         /* Helps with spacing things in a row */
-    gap: 25px;            /* Clean, consistent space between links */
+    display: flex; 
+    gap: 25px; 
 }
 
 .footer-links a {
     color: #000;
     text-decoration: none;
-    text-transform: lowercase; /* Matches your nav bar perfectly */
+    text-transform: lowercase; 
     font-size: 0.75rem;
     font-weight: 500;
     transition: opacity 0.2s ease;
