@@ -1,0 +1,81 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\title{From Newton's Laws to Orbital Mechanics}
+\author {Sergey}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper derives the fundamental results of orbital mechanics
+from Newton's three laws of motion and his law of universal gravitation. To many, this will already be obvious intro to physics, but to me, this is entirely new and I had
+to learn all of this from scratch. This entire "paper" is just me teaching myself basic physics, how to use LaTeX, navigating in neovim, and generally having fun. 
+I plan to make this, amongst other similar "papers", a series I call "Documented Learning." Over time, I hope to document the different things I learned over the course 
+of my self-study with the hope that I can look back one day and say "Wow. I really didn't even know Newton's laws of motion at some point, huh"."
+\end{abstract}
+
+\newpage
+\section{Newton's Laws of Motion}
+First and foremost obvious is that an object at rest will stay at rest, and an object in motion will remain in motion unless acted upon by some external force. 
+
+More interesting is that the total force on an object is the product of its mass and acceleration. $F = ma$. Speed is the measure of how fast an object is moving, 
+whereas acceleration is the measure of how fast the speed of said object is changing.
+Basic algebra will teach that if $F$ is constant, increasing either $m$ or $a$ will lead to a decrease in the other.
+
+For the third law, every action has an equal and opposite reaction. The Earth pulls the moon with the same strength that the moon pulls the Earth. 
+
+\section{Universal Gravitation}
+This measures how strong gravity pulls at one specific distance, measured in Newtons. Every object with a mass attracts every other object with a mass 
+per the formula: $$F = G \cdot \frac{M_1 M_2}{D^2}$$ where G is the gravitational constant, M1 and M2 are the masses of each object, and D is the distance 
+between the centerpoints of both masses. 
+
+\section{Gravitational Acceleration}
+This measures how much acceleration the gravitational force of the primary body produces on the secondary body. Given $F = ma$, I can actually set this equal to 
+$F = G \frac{M_1 M_2}{D^2}$, where: $$ma = G \cdot \frac{M_1 M_2}{D^2}$$ 
+In this formula, I'm ultimately solving for $a$, which would lead both sides to be divided by $m$ in: $$a = G \cdot \frac{M_1 M_2}{D^2 m}$$ 
+Where $m$ substitutes the mass being pulled. I actually wondered why it mattered - that is, whether $m$ should cancel $M_1$ or $M_2$, 
+but it doesn't. $M$ is the primary body, and $m$ is the secondary body. Basic algebra teaches that the $m$'s cancel out, thus leaving the $a$ part of this formula, 
+or gravitational acceleration, to be: $$ a = G \cdot \frac{M}{D^2}$$ When $m$ cancels, acceleration is entirely dependent only upon $M$ and $D$. A bowling ball and a 
+feather, for example, fall at the same rate towards the Earth, where Earth constitutes $M$ and either ball or feather constitutes $m$.
+
+\section{Escape Velocity}
+The way I interpret escape velocity is the speed needed to escape the gravitational force of a primary body. Before I can derive some given escape velocity, I 
+learned a bit about how the formula for kinetic energy was discovered. Funnily enough, it was basically discovered experimentally by Leibniz, and is:
+$$\frac{1}{2}M_2v^2$$
+I then learned a bit about the interaction between kinetic and potential energy, and for any object in motion, they should basically always be constant,
+which is the law of conservation of energy. In the previous equation, $M_2$ is mass of said object, $v$ is velocity, which is what I am calculating for in escape velocity, and
+the 0.5 is some sort of energy integral that I am too inexperienced to derive yet. I'll take it as a given and come back to it in a future project or white paper.
+
+For potential energy, the formula is:
+$$- G \cdot \frac{M_1 M_2}{D}$$
+Negative because the reference point is basically the "top" of the primary body's gravity field. $M_1$ remains the primary body, $M_2$ the secondary body, and $D$ the distance
+between them. On Earth, potential energy is always negative, kinetic energy is always positive. The sum of the two is total energy. The way I understand this is that if 
+KE exceeds PE for an object, that object can escape the gravitational bound of the primary body. If PE exceeds KE, then it cannot ever escape the gravitational
+bound of said primary body. Interestingly, KE can equal PE, and that's escape velocity. Of course, that would be absolute value of PE given it's always negative.
+I'm not sure why but I struggled a bit understanding this concept, even though it's incredibly easy in retrospect. 
+Regardless, velocity $v$ can be solved from the total energy formula, which is: $$\frac{1}{2}M_2v^2 + - G \cdot \frac{M_1 M_2}{D} = 0$$
+To be clear, the $= 0$ part of the above equation is because KE is equal to the absolute value of PE, which means added they must be 0. And, that formula rearranged, is:
+$$v_{escape} = \sqrt{2G \cdot \frac{M_1}{D}}$$
+
+\section{Orbital Velocity}
+Orbital velocity as I understand it is just the speed at which a secondary body orbits a primary body. For orbital velocity, 
+I needed to learn about centripetal force. Anything force I already know is $F = ma$, so I can infer centripetal force is related somehow
+to centripetal acceleration. I learned about the proper definition of acceleration, which is that it's a change in direction AND speed (velocity), so I imagine some sort 
+of satellite orbiting the Earth at a constant speed but constantly changing direction due to gravity pulling it to the center of Earth. That would still be 
+considered acceleration. The reason the speed of the satellite never changes is because it was launched at some velocity and it just keeps going in said velocity, which 
+is Newton's first law. I learned that this acceleration, which is centripetal acceleration in this case, can only increase or decrease as a result of two things: 
+either the satellite moves incredibly fast, meaning it has a high velocity $v$, and changes direction quickly as well. I would imagine this is a 
+satellite that performs many revolutions around Earth. But it could also decrease with distance $D$, where a satellite on the very edge of the orbit of Earth must,
+by definition, perform revolutions around Earth slower than a satellite closer to the Earth assuming they are moving at the same velocity. So, the formula for centripetal 
+acceleration should be some proportion of $\frac{M_2v}{D}$, and is: $$\frac{M_2v^2}{D}$$
+I learned that understanding the $v^2$ also includes calculus I don't quite understand yet, so I'll come back to that later and accept the formula as a given for now.
+With that given, in any given orbital velocity, we can assume the centripetal force comes from gravitational force. That only makes sense, and I think this is 
+definitional, but I can't prove it. Regardless, we can take that as a given and set
+$$G \cdot \frac{M_1 M_2}{D^2} = \frac{M_2v^2}{D}$$ 
+Where $M_2$ is the orbiting body. And after basic algebra, and solving for orbital velocity $v$, gives:
+$$v_{orbital} = \sqrt{G \cdot \frac{M_1}{D}}$$
+To clarify, since the mass of the secondary body (the orbiting body) gets cancelled out in the formula, its mass is actually irrelevant in this calculation.
+
+\end{document}
